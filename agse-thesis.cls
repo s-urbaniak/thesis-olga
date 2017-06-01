@@ -1,3 +1,5 @@
+% !TeX encoding = UTF-8
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{agse-thesis}[2017/05/23 v0.1 AGSE Thesis]
 
@@ -49,6 +51,7 @@
 
 % Allow unicode in input files
 \RequirePackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 
 % Set layout
 \RequirePackage[
@@ -194,8 +197,6 @@
     \pgfkeys{#1}
     \pagestyle{empty}
 
-    \ifcsdef{separateAbstract}{\mbox{}\vspace{15mm}}{\mbox{}}
-
     \begin{center}
         \LARGE
         \textbf{Freie Universität Berlin}
@@ -239,29 +240,22 @@
 
         \ifcsdef{separateAbstract}{\vfill}{\vspace{13mm}}
 
-        \Large
-        \studentName \\
-        \normalsize
-        Matrikelnummer: \studentID\\
-        \mailto{\coverpageMail}
-
         \vspace{4mm}
 
         \begin{tabular}{rl}
-            \ifcsdef{advisor}{Betreuer: & \advisor\\}{}
-            Eingereicht bei: & \firstExaminer \\
-            \ifcsdef{secondExaminer}{Zweitgutachter: & \secondExaminer\\}{}
+          Vorgelegt von: & \studentName \\
+          & Landshuter Str. 7a \\
+          & 10779 Berlin \\
+          & Tel.: 030 - 787 151 30 \\
+          & \mailto{\coverpageMail} \\
+          \\
+          Matrikel-Nr.: & 4802822 \\
+          \\
+          W\"orter im Textteil: & xxx \\
         \end{tabular}
 
-        \vspace{4mm}
+        \vspace{2cm}
 
         Berlin, \thesisDate
     \end{center}
-
-    \ifcsdef{separateAbstract}{\cleardoublepage\frontmatter}{\vfill}
-    \begin{abstract}
-        #2
-    \end{abstract}
-    \cleardoublepage
-    \ifcsdef{separateAbstract}{}{\frontmatter}
 }

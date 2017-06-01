@@ -7,8 +7,7 @@ thesis: $(SRC)
 all: thesis
 
 clean:
-	rubber --clean -d praca
-	rubber --clean -d presentation
+	rubber --clean -d thesis
 
 .PHONY: \
 	clean
