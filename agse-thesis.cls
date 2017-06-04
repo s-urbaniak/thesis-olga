@@ -34,6 +34,8 @@
 % Load required language
 \RequirePackage[\lang]{babel}
 
+\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}
+
 % Load required font
 \RequirePackage{xifthen}
 \ifthenelse{\equal{\fonttype}{plain}}{
@@ -183,6 +185,11 @@
         \pagenumbering{arabic}
         \setcounter{page}{1}
     }
+}
+
+\newcommand{\hang}{
+  \hangindent=2em
+  \hangafter=1
 }
 
 \RequirePackage{xstring}
