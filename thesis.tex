@@ -7,7 +7,9 @@
 %   article (default, no chapters), book (for longer texts, offers \chapter)
 % Paragraph options are:
 %   noparskip (default, no spacing between paragraphs), parskip (spaced)
-\documentclass[serif,article,noparskip]{agse-thesis}
+\documentclass[serif,article,parskip]{agse-thesis}
+\usepackage[font={small,it}]{caption}
+\renewcommand{\baselinestretch}{1.5}
 
 % Global parameters, replace with actual values.
 \newcommand{\thesisTitle}{Traumapädagogik - wann und wozu und wann nicht mehr?}
@@ -38,28 +40,22 @@
    %title/size=\LARGE,      % set this value to overwrite automatic font size
    %abstract/separate       % toggle this to move the abstract to its own page
 ]
-{ % Your abstract here:
-    \lipsum[1]
-}
 
-\include{declaration}
-
-\cleardoublepage
-
+\clearpage
 \tableofcontents
 
-\cleardoublepage
+\clearpage
+\listoffigures
 
+\clearpage
 \mainmatter
+\setcounter{secnumdepth}{0}
+\input{einfuehrung}
 
-\input{1_introduction}
-\input{2_fundamentals}
-\input{3_main}
-\input{4_conclusion}
-
-\bibliography{bibliography}
+\setcounter{secnumdepth}{2}
+\input{annaeherung}
 
 \appendix
-\include{5_appendix}
+\include{appendix}
 
 \end{document}

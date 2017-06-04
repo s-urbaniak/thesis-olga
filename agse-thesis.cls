@@ -55,11 +55,12 @@
 
 % Set layout
 \RequirePackage[
-    inner=3.4cm,
-    outer=3cm,
-    top=3cm,
-    marginparwidth=2.5cm,
-    marginparsep=0.1cm
+  left=2.5cm,
+  right=2.5cm,
+  bottom=2.5cm,
+  inner=2.5cm,
+  marginparwidth=2.5cm,
+  marginparsep=0.1cm
 ]{geometry}
 
 \ifthenelse{\equal{\useparskip}{yes}}{
@@ -67,14 +68,7 @@
 }{}
 
 % Header and Footer Style
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead{}
-\fancyhead[OR]{\slshape\nouppercase{\rightmark}}
-\fancyhead[EL]{\slshape\nouppercase{\leftmark}}
-\fancyfoot{}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+\pagestyle{plain}
 
 % Display Chapter and Section for book class
 \ifthenelse{\equal{\baseClass}{book}}{
@@ -110,9 +104,9 @@
 \RequirePackage[pdftex]{graphicx}
 
 %%% BibTeX
-\RequirePackage[numbers,sort&compress]{natbib}
-\RequirePackage[nottoc]{tocbibind}
-\bibliographystyle{plain}
+% \RequirePackage[numbers,sort&compress]{natbib}
+% \RequirePackage[nottoc]{tocbibind}
+% \bibliographystyle{plain}
 
 % Java Code Listing Style
 \RequirePackage{xcolor}
@@ -175,7 +169,7 @@
     \let\mainmatterOrig\mainmatter
     \renewcommand{\mainmatter}{
         \mainmatterOrig
-        \pagestyle{fancy}
+        \pagestyle{plain}
         \setcounter{page}{1}
     }
 }{
@@ -185,7 +179,7 @@
         \setcounter{page}{1}
     }
     \newcommand{\mainmatter}{
-        \pagestyle{fancy}
+        \pagestyle{plain}
         \pagenumbering{arabic}
         \setcounter{page}{1}
     }
