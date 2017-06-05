@@ -8,7 +8,6 @@
 % Paragraph options are:
 %   noparskip (default, no spacing between paragraphs), parskip (spaced)
 \documentclass[serif,article,parskip]{agse-thesis}
-\usepackage[font={small,it}]{caption}
 \renewcommand{\baselinestretch}{1.5}
 
 % Global parameters, replace with actual values.
@@ -22,7 +21,8 @@
 \hypersetup{pdftitle={\thesisTitle}}
 \hypersetup{pdfauthor={\studentName}}
 
-% Blind texts, for demonstration only, not part of the actual template
+\usepackage[font={small,it}]{caption}
+\usepackage{enumitem}
 \usepackage{lipsum}
 
 \begin{document}
@@ -55,6 +55,9 @@
 \setcounter{secnumdepth}{2}
 \input{annaeherung}
 \input{traumapaedagogik_haltung_konzepte}
+\input{gruende}
+\input{handlungsfaehig}
+\input{fazit}
 
 \clearpage
 \setcounter{secnumdepth}{0}
