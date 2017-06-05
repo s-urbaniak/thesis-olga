@@ -23,10 +23,6 @@
 }
 \DeclareOption{book}{\renewcommand{\baseClass}{book}}
 
-\newcommand{\useparskip}{no}
-\DeclareOption{parskip}{\renewcommand{\useparskip}{yes}}
-\DeclareOption{noparskip}{\renewcommand{\useparskip}{no}}
-
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\baseClass}}
 \ProcessOptions\relax
 \LoadClass[11pt,a4paper]{\baseClass}
@@ -65,10 +61,6 @@
   marginparsep=0.1cm
 ]{geometry}
 
-\ifthenelse{\equal{\useparskip}{yes}}{
-    \RequirePackage{parskip}
-}{}
-
 % Header and Footer Style
 \pagestyle{plain}
 
@@ -100,6 +92,7 @@
 
 % Misc
 \RequirePackage{fancyref}
+\RequirePackage{fancyhdr}
 \RequirePackage{url}
 \RequirePackage{makeidx}
 
@@ -176,14 +169,19 @@
     }
 }{
     \newcommand{\frontmatter}{
-        \pagestyle{plain}
+        \pagestyle{fancy}
         \pagenumbering{roman}
         \setcounter{page}{1}
     }
     \newcommand{\mainmatter}{
-        \pagestyle{plain}
+        \pagestyle{fancy}
         \pagenumbering{arabic}
         \setcounter{page}{1}
+        \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+        \fancyhead[L]{Traumapädagogik} %Kopfzeile links
+        \fancyhead[C]{} %zentrierte Kopfzeile
+        \fancyhead[R]{Olga Urbaniak} %Kopfzeile rechts
+        \fancyfoot[C]{\thepage}
     }
 }
 
