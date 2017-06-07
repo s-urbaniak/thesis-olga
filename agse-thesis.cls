@@ -58,7 +58,8 @@
   bottom=2.5cm,
   inner=2.5cm,
   marginparwidth=2.5cm,
-  marginparsep=0.1cm
+  marginparsep=0.1cm,
+  headsep=1.5cm,
 ]{geometry}
 
 % Header and Footer Style
@@ -76,6 +77,7 @@
 
 % PDF settings
 \usepackage[%
+  breaklinks=true,
     pdfstartview=FitH,
     linktocpage,
 % two lines below = color links
@@ -178,10 +180,15 @@
         \pagenumbering{arabic}
         \setcounter{page}{1}
         \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
-        \fancyhead[L]{Traumapädagogik} %Kopfzeile links
+        \fancyhead[L]{\textcolor{gray}{Traumapädagogik}} %Kopfzeile links
         \fancyhead[C]{} %zentrierte Kopfzeile
-        \fancyhead[R]{Olga Urbaniak} %Kopfzeile rechts
+        \fancyhead[R]{\textcolor{gray}{Olga Urbaniak}} %Kopfzeile rechts
         \fancyfoot[C]{\thepage}
+
+        \renewcommand{\headrulewidth}{0.1pt}% 2pt header rule
+        \renewcommand{\headrule}{\hbox to\headwidth{%
+            \color{gray}\leaders\hrule height \headrulewidth\hfill}}
+        \renewcommand{\footrulewidth}{0pt}% No footer rule
     }
 }
 

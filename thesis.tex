@@ -7,7 +7,7 @@
 %   article (default, no chapters), book (for longer texts, offers \chapter)
 % Paragraph options are:
 %   noparskip (default, no spacing between paragraphs), parskip (spaced)
-\documentclass[serif,article]{agse-thesis}
+\documentclass[serif,article,noparskip]{agse-thesis}
 \renewcommand{\baselinestretch}{1.5}
 
 % Global parameters, replace with actual values.
@@ -24,7 +24,7 @@
 \usepackage[font={small,it}]{caption}
 \usepackage{enumitem}
 \setlist{itemsep=0pt,parsep=0pt,partopsep=5pt,topsep=-\parskip}
-\usepackage{parskip}
+\setlength{\parskip}{0em}
 
 \begin{document}
 
@@ -41,7 +41,6 @@
    %title/size=\LARGE,      % set this value to overwrite automatic font size
    %abstract/separate       % toggle this to move the abstract to its own page
 ]
-
 
 \renewcommand{\headrulewidth}{0pt}
 
