@@ -53,13 +53,10 @@
 
 % Set layout
 \RequirePackage[
+  top=2.5cm,
+  bottom=2.5cm,
   left=2.5cm,
   right=2.5cm,
-  bottom=2.5cm,
-  inner=2.5cm,
-  marginparwidth=2.5cm,
-  marginparsep=0.1cm,
-  headsep=1.5cm,
 ]{geometry}
 
 % Header and Footer Style
