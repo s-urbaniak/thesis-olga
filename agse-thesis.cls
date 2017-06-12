@@ -57,6 +57,8 @@
   bottom=2.5cm,
   left=2.5cm,
   right=2.5cm,
+  includehead,
+  includefoot,
 ]{geometry}
 
 % Header and Footer Style
