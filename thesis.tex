@@ -21,6 +21,8 @@
 \hypersetup{pdftitle={\thesisTitle}}
 \hypersetup{pdfauthor={\studentName}}
 
+\usepackage[nottoc]{tocbibind}
+
 \usepackage[font={small,it}]{caption}
 \usepackage{enumitem}
 \setlist{itemsep=0pt,parsep=0pt,partopsep=5pt,topsep=-\parskip}
@@ -48,11 +50,13 @@
 \tableofcontents
 
 \clearpage
+\setcounter{page}{1}
 \listoffigures
 
 \clearpage
 \renewcommand{\headrulewidth}{0.1pt}
 \mainmatter
+\setcounter{page}{2}
 \setcounter{secnumdepth}{0}
 \input{einfuehrung}
 

@@ -57,8 +57,6 @@
   bottom=2.5cm,
   left=2.5cm,
   right=2.5cm,
-  includehead,
-  includefoot,
 ]{geometry}
 
 % Header and Footer Style
@@ -166,18 +164,15 @@
     \renewcommand{\mainmatter}{
         \mainmatterOrig
         \pagestyle{plain}
-        \setcounter{page}{1}
     }
 }{
     \newcommand{\frontmatter}{
         \pagestyle{fancy}
         \pagenumbering{roman}
-        \setcounter{page}{1}
     }
     \newcommand{\mainmatter}{
         \pagestyle{fancy}
         \pagenumbering{arabic}
-        \setcounter{page}{1}
         \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
         \fancyhead[L]{\textcolor{gray}{Traumapädagogik}} %Kopfzeile links
         \fancyhead[C]{} %zentrierte Kopfzeile
@@ -256,7 +251,7 @@
           \\
           Matrikel-Nr.: & 4802822 \\
           \\
-          W\"orter im Textteil: & xxx \\
+          W\"orter im Textteil: & 7993 \\
         \end{tabular}
 
         \vspace{2cm}
