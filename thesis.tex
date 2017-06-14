@@ -1,73 +1,112 @@
-% !TeX encoding = UTF-8
+\documentclass[11pt,a4paper]{article}
 
-%===============================================================================
-% Font options are:
-%   plain (default), serif (uses Palladio), sans-serif (uses Paratype Sans)
-% Layout options are:
-%   article (default, no chapters), book (for longer texts, offers \chapter)
-% Paragraph options are:
-%   noparskip (default, no spacing between paragraphs), parskip (spaced)
-\documentclass[serif,article,noparskip]{agse-thesis}
 \renewcommand{\baselinestretch}{1.5}
-
-% Global parameters, replace with actual values.
-\newcommand{\thesisTitle}{Traumapädagogik - wann und wozu und wann nicht mehr?}
-\newcommand{\thesisSubtitle}{Zur Attraktivität des \textit{Traumas} für die Pädagogik}
-% -> You may use \par (but not \\) to format the title. If you do so, you'll
-%    need to manually set the 'pdftitle' attribute below.
-\newcommand{\studentName}{Olga Urbaniak}
-%===============================================================================
-
-\hypersetup{pdftitle={\thesisTitle}}
-\hypersetup{pdfauthor={\studentName}}
-
+\usepackage[sc]{mathpazo}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
 \usepackage[nottoc]{tocbibind}
-
 \usepackage[font={small,it}]{caption}
-\usepackage{enumitem}
-\setlist{itemsep=0pt,parsep=0pt,partopsep=5pt,topsep=-\parskip}
-\setlength{\parskip}{0em}
+\usepackage{xcolor}
+
+\usepackage[%
+  breaklinks=true,
+    pdfstartview=FitH,
+    linktocpage,
+% two lines below = don't color links
+    colorlinks=false,
+    pdfborder={0 0 0},
+]{hyperref}
+
+\usepackage[
+  top=25mm,
+  bottom=25mm,
+  left=25mm,
+  right=25mm,
+]{geometry}
+
+\newcommand{\hang}{
+  \hangindent=2em
+  \hangafter=1
+}
+
+\newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
 
 \begin{document}
 
-\coverpage[
-    student/id=1234567,
-    student/mail=olga.urbaniak@fu-berlin.de,
-    thesis/type=Bachelorarbeit,            % optional, default: Bachelorarbeit
-    thesis/group={Arbeitsgruppe Software Engineering},
-                                           % optional, default: AGSE
-    thesis/firstAdvisor={1. Gutachterin: Prof. Dr. Ulrike Urban-Stahl},            thesis/secondAdvisor={2. Gutachterin: Prof. Dr. Katrin Kaufmann},           % optional
-    thesis/examiner={Prof. Dr. Mia Maus},
-    thesis/examiner/2={Prof. Dr. Bob Bär}, % optional
-    thesis/date=\today,                    % optional, default: \today
-   %title/size=\LARGE,      % set this value to overwrite automatic font size
-   %abstract/separate       % toggle this to move the abstract to its own page
-]
+\pagestyle{empty}
+\begin{center}
+\LARGE
+\textbf{Freie Universität Berlin}
+\vspace{4mm}
 
-\renewcommand{\headrulewidth}{0pt}
+\normalsize
+Fachbereich Erziehungswissenschaft und Psychologie \\
+Bildungs- und Erziehungswissenschaft \\
+(Bachelor of Arts)
+
+\vspace{2mm}
+
+\huge
+Traumapädagogik - wann und wozu und wann nicht mehr?
+
+\vspace{2mm}
+
+\Large
+Zur Attraktivität des \textit{Traumas} für die Pädagogik
+\end{center}
+
+\vspace{10mm}
+
+1. Gutachterin: Prof. Dr. Ulrike Urban-Stahl
+
+2. Gutachterin: Prof. Dr. Katrin Kaufmann
+
+\vspace{17mm}
+
+\begin{center}
+\begin{tabular}{rl}
+  Vorgelegt von: & Olga Urbaniak \\
+  & Landshuter Str. 7a \\
+  & 10779 Berlin \\
+  & Tel.: 030 - 787 151 30 \\
+  & \mailto{olga.urbaniak@fu-berlin.de} \\
+  \\
+  Matrikel-Nr.: & 4802822 \\
+  \\
+  W\"orter im Textteil: & 7993 \\
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+
+Berlin, \today
 
 \clearpage
-\tableofcontents
 
-\clearpage
 \setcounter{page}{1}
-\listoffigures
-
+\tableofcontents
 \clearpage
-\renewcommand{\headrulewidth}{0.1pt}
-\mainmatter
-\setcounter{page}{2}
-\setcounter{secnumdepth}{0}
-\input{einfuehrung}
 
-\setcounter{secnumdepth}{2}
+\listoffigures
+\clearpage
+
+\pagestyle{fancy}
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{\textcolor{gray}{Traumapädagogik}} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\textcolor{gray}{Olga Urbaniak}} %Kopfzeile rechts
+\fancyfoot[C]{\thepage}
+
+\input{einfuehrung}
 \input{annaeherung}
 \input{traumapaedagogik_haltung_konzepte}
 \input{gruende}
 \input{handlungsfaehig}
 \input{fazit}
 
-\clearpage
 \setcounter{secnumdepth}{0}
 \input{literaturverzeichnis}
 \appendix
